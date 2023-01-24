@@ -1,0 +1,1 @@
+﻿C:\main\source\port\libmysql\uca9dump.vcxproj(73,5): error MSB4019: The imported project "C:\operating-system\operating-system-windows\Common.props" was not found. Confirm that the expression in the Import declaration "..\..\..\..\operating-system\operating-system-windows\Common.props" is correct, and that the file exists on disk.

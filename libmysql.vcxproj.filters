@@ -21,32 +21,30 @@
     <Filter Include="Source Files\libmysql">
       <UniqueIdentifier>{4bc2485e-e064-40a7-8282-632e05ee2480}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="crc32.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="deflate.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gzguts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inffast.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inffixed.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inflate.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inftrees.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="trees.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <Filter Include="Source Files\sql-common">
+      <UniqueIdentifier>{c526b64d-b872-4e54-b3e3-7968aa80707b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\mysys">
+      <UniqueIdentifier>{1b70ae29-f5a7-4818-b6c0-2eef212c9685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vio">
+      <UniqueIdentifier>{40704f08-9ad8-403c-9b73-c32161ceb281}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\strings">
+      <UniqueIdentifier>{6c0f32e0-c88d-49dc-9f51-f6b55c329821}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\string">
+      <UniqueIdentifier>{4d2c5f2d-8657-4179-b5f6-cda275662b7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sql-common">
+      <UniqueIdentifier>{1f3755c4-c788-4669-aea5-12b276a8f021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sql">
+      <UniqueIdentifier>{f872d879-5688-4e0d-9342-1ed890af6c30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sql\auth">
+      <UniqueIdentifier>{4008c336-b314-4c0e-bded-482773fe2263}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="contrib\masmx86\inffas32.asm">
@@ -72,11 +70,537 @@
     <ClCompile Include="libmysql\libmysql.cc">
       <Filter>Source Files\libmysql</Filter>
     </ClCompile>
-    <ClCompile Include="libmysql\mysql_trace.cc">
-      <Filter>Source Files\libmysql</Filter>
+    <ClCompile Include="sql-common\client.cc">
+      <Filter>Source Files\sql-common</Filter>
     </ClCompile>
-    <ClCompile Include="libmysql\test_trace_plugin.cc">
-      <Filter>Source Files\libmysql</Filter>
+    <ClCompile Include="mysys\my_error.cc">
+      <Filter>Source Files\mysys</Filter>
     </ClCompile>
+    <ClCompile Include="mysys\my_file.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_read.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_malloc.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="vio\viosslfactories.cc">
+      <Filter>Source Files\vio</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_time.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_openssl_fips.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="sql-common\net_serv.cc">
+      <Filter>Source Files\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_thr_init.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\array.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\charset.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\charset-def.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\crypt_genhash_impl.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\dbug.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\errors.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\keyring_operations_helper.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\lf_alloc-pin.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\lf_dynarray.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\lf_hash.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\list.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_arr_appstr.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_cache.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_dirname.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_fn_ext.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_format.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_iocache.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_iocache2.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_keycache.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_keycaches.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_loadpath.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_pack.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_path.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_same.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_tempdir.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_tempfile.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_unixpath.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mf_wcomp.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\mulalloc.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_access.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_aes.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_aes_openssl.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_alloc.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_bit.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_bitmap.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_chmod.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_chsize.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_compare.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_conio.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_copy.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_create.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_default.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_delete.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_fallocator.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_fopen.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_fstream.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_gethwaddr.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_getopt.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_getwd.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_init.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_kdf.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_lib.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_md5.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_mess.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_mkdir.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_mmap.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_murmur3.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_nojemalloc.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_once.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_open.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_pread.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_rdtsc.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_rename.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_rnd.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_seek.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_sha1.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_sha2.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_static.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_string.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_symlink.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_symlink2.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_sync.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_syslog.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_systime.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_thread.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_user.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_windac.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_winerr.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_winfile.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_write.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\pack.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\print_version.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\psi_noop.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\ptr_cmp.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\sql_chars.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\stacktrace.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\thr_cond.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\thr_lock.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\thr_mutex.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\thr_rwlock.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\tree.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\typelib.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\unhex.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\win_timers.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-big5.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-bin.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-cp932.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-czech.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-euc_kr.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-eucjpms.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-extra.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-gb2312.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-gb18030.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-gbk.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-latin1.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-mb.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-simple.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-sjis.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-tis620.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-uca.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-ucs2.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-ujis.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-utf8.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\ctype-win1250ch.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\strmake.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\strxnmov.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\dtoa.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\int2str.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\strxmov.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\str2int.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="sql-common\client_authentication.cc">
+      <Filter>Source Files\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\xml.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="mysys\my_compress.cc">
+      <Filter>Source Files\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="sql-common\client_plugin.cc">
+      <Filter>Source Files\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\hans_ja.cpp">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\hans_zh.cpp">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\my_strtoll10.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="vio\vio.cc">
+      <Filter>Source Files\vio</Filter>
+    </ClCompile>
+    <ClCompile Include="vio\viossl.cc">
+      <Filter>Source Files\vio</Filter>
+    </ClCompile>
+    <ClCompile Include="vio\viopipe.cc">
+      <Filter>Source Files\vio</Filter>
+    </ClCompile>
+    <ClCompile Include="vio\vioshm.cc">
+      <Filter>Source Files\vio</Filter>
+    </ClCompile>
+    <ClCompile Include="vio\viosocket.cc">
+      <Filter>Source Files\vio</Filter>
+    </ClCompile>
+    <ClCompile Include="sql-common\bind_params.cc">
+      <Filter>Source Files\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="sql-common\compression.cc">
+      <Filter>Source Files\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="sql-common\get_password.cc">
+      <Filter>Source Files\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="sql-common\json_binary.cc">
+      <Filter>Source Files\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="sql-common\json_dom.cc">
+      <Filter>Source Files\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="sql-common\json_path.cc">
+      <Filter>Source Files\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="sql-common\json_syntax_check.cc">
+      <Filter>Source Files\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="sql-common\my_path_permissions.cc">
+      <Filter>Source Files\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="sql-common\net_ns.cc">
+      <Filter>Source Files\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="sql-common\sql_string.cc">
+      <Filter>Source Files\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\decimal.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\dump_map.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\my_strchr.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\str_alloc.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="strings\strcont.cc">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="sql\auth\password.cc">
+      <Filter>Source Files\sql\auth</Filter>
+    </ClCompile>
+    <ClCompile Include="sql\auth\sha2_password_common.cc">
+      <Filter>Source Files\sql\auth</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libmysql.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="strings\mb_wc.h">
+      <Filter>Header Files\string</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\str_uca_type.h">
+      <Filter>Header Files\string</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\t_ctype.h">
+      <Filter>Header Files\string</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\uca_data.h">
+      <Filter>Header Files\string</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\uca900_data.h">
+      <Filter>Header Files\string</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\uca900_ja_data.h">
+      <Filter>Header Files\string</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\uca900_zh_data.h">
+      <Filter>Header Files\string</Filter>
+    </ClInclude>
+    <ClInclude Include="sql-common\client_async_authentication.h">
+      <Filter>Header Files\sql-common</Filter>
+    </ClInclude>
+    <ClInclude Include="sql-common\client_extensions_macros.h">
+      <Filter>Header Files\sql-common</Filter>
+    </ClInclude>
+    <ClInclude Include="sql-common\json_binary.h">
+      <Filter>Header Files\sql-common</Filter>
+    </ClInclude>
+    <ClInclude Include="sql-common\json_dom.h">
+      <Filter>Header Files\sql-common</Filter>
+    </ClInclude>
+    <ClInclude Include="sql-common\json_error_handler.h">
+      <Filter>Header Files\sql-common</Filter>
+    </ClInclude>
+    <ClInclude Include="sql-common\json_path.h">
+      <Filter>Header Files\sql-common</Filter>
+    </ClInclude>
+    <ClInclude Include="sql-common\json_syntax_check.h">
+      <Filter>Header Files\sql-common</Filter>
+    </ClInclude>
+    <ClInclude Include="sql-common\net_ns.h">
+      <Filter>Header Files\sql-common</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

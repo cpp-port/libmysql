@@ -46,56 +46,56 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -195,8 +195,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>ZLIB_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating-system/operating-system-windows/_include;$(SolutionDir)../../../operating-system/operating-system-windows;$(SolutionDir)../../../operating-system/operating-system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ZLIB_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib;extra/rapidjson/include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAsManaged>false</CompileAsManaged>
       <CompileAsWinRT>false</CompileAsWinRT>
@@ -222,14 +222,14 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
-      <SupportJustMyCode>true</SupportJustMyCode>
       <EnableModules>false</EnableModules>
+      <ForcedIncludeFiles>my_config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcrypto.lib;libssl.lib;DnsApi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ModuleDefinitionFile>./$(ProjectName).def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>libmysql.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
       <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
@@ -252,8 +252,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating-system/operating-system-windows/_include;$(SolutionDir)../../../operating-system/operating-system-windows;$(SolutionDir)../../../operating-system/operating-system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib;extra/rapidjson/include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAsManaged>false</CompileAsManaged>
       <CompileAsWinRT>false</CompileAsWinRT>
@@ -280,15 +280,15 @@
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
-      <SupportJustMyCode>true</SupportJustMyCode>
       <EnableModules>false</EnableModules>
+      <ForcedIncludeFiles>my_config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ModuleDefinitionFile>./$(ProjectName).def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>libmysql.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
       <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
@@ -310,8 +310,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Full</Optimization>
-      <PreprocessorDefinitions>ZLIB_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating-system/operating-system-windows/_include;$(SolutionDir)../../../operating-system/operating-system-windows;$(SolutionDir)../../../operating-system/operating-system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ZLIB_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib;extra/rapidjson/include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAsManaged>false</CompileAsManaged>
       <CompileAsWinRT>false</CompileAsWinRT>
@@ -338,15 +338,15 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
-      <SupportJustMyCode>true</SupportJustMyCode>
       <EnableModules>false</EnableModules>
+      <ForcedIncludeFiles>my_config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcrypto.lib;libssl.lib;DnsApi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ModuleDefinitionFile>./$(ProjectName).def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>libmysql.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
@@ -371,8 +371,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MinSpace</Optimization>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating-system/operating-system-windows/_include;$(SolutionDir)../../../operating-system/operating-system-windows;$(SolutionDir)../../../operating-system/operating-system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib;extra/rapidjson/include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAsManaged>false</CompileAsManaged>
       <CompileAsWinRT>false</CompileAsWinRT>
@@ -400,9 +400,9 @@
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
-      <SupportJustMyCode>true</SupportJustMyCode>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <EnableModules>false</EnableModules>
+      <ForcedIncludeFiles>my_config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -410,7 +410,7 @@
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ModuleDefinitionFile>./$(ProjectName).def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>libmysql.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
@@ -437,8 +437,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>ZLIB_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating-system/operating-system-windows/_include;$(SolutionDir)../../../operating-system/operating-system-windows;$(SolutionDir)../../../operating-system/operating-system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ZLIB_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib;extra/rapidjson/include</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <CompileAsWinRT>false</CompileAsWinRT>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -464,15 +464,15 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
-      <SupportJustMyCode>true</SupportJustMyCode>
       <EnableModules>false</EnableModules>
+      <ForcedIncludeFiles>my_config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcrypto.lib;libssl.lib;DnsApi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ModuleDefinitionFile>./$(ProjectName).def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>libmysql.def</ModuleDefinitionFile>
       <ImportLibrary>$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
       <ImageHasSafeExceptionHandlers>
       </ImageHasSafeExceptionHandlers>
@@ -495,8 +495,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating-system/operating-system-windows/_include;$(SolutionDir)../../../operating-system/operating-system-windows;$(SolutionDir)../../../operating-system/operating-system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib;extra/rapidjson/include</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <CompileAsWinRT>false</CompileAsWinRT>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -523,8 +523,8 @@
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
-      <SupportJustMyCode>true</SupportJustMyCode>
       <EnableModules>false</EnableModules>
+      <ForcedIncludeFiles>my_config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -532,7 +532,7 @@
       <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ModuleDefinitionFile>./$(ProjectName).def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>libmysql.def</ModuleDefinitionFile>
       <ImportLibrary>$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
       <ImageHasSafeExceptionHandlers>
       </ImageHasSafeExceptionHandlers>
@@ -554,8 +554,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Full</Optimization>
-      <PreprocessorDefinitions>ZLIB_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating-system/operating-system-windows/_include;$(SolutionDir)../../../operating-system/operating-system-windows;$(SolutionDir)../../../operating-system/operating-system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ZLIB_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib;extra/rapidjson/include</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <CompileAsWinRT>false</CompileAsWinRT>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -582,16 +582,16 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
-      <SupportJustMyCode>true</SupportJustMyCode>
       <EnableModules>false</EnableModules>
+      <ForcedIncludeFiles>my_config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcrypto.lib;libssl.lib;DnsApi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ModuleDefinitionFile>./$(ProjectName).def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>libmysql.def</ModuleDefinitionFile>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <FixedBaseAddress>false</FixedBaseAddress>
       <ImportLibrary>$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
@@ -613,8 +613,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MinSpace</Optimization>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating-system/operating-system-windows/_include;$(SolutionDir)../../../operating-system/operating-system-windows;$(SolutionDir)../../../operating-system/operating-system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib;extra/rapidjson/include</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <CompileAsWinRT>false</CompileAsWinRT>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -643,8 +643,8 @@
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
-      <SupportJustMyCode>true</SupportJustMyCode>
       <EnableModules>false</EnableModules>
+      <ForcedIncludeFiles>my_config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -653,7 +653,7 @@
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ModuleDefinitionFile>./$(ProjectName).def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>libmysql.def</ModuleDefinitionFile>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <FixedBaseAddress>false</FixedBaseAddress>
       <ImportLibrary>$(SolutionDir)..\..\..\..\operating-system\storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
@@ -671,16 +671,6 @@
       <SubSystem>Windows</SubSystem>
     </Lib>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="crc32.h" />
-    <ClInclude Include="deflate.h" />
-    <ClInclude Include="gzguts.h" />
-    <ClInclude Include="inffast.h" />
-    <ClInclude Include="inffixed.h" />
-    <ClInclude Include="inflate.h" />
-    <ClInclude Include="inftrees.h" />
-    <ClInclude Include="trees.h" />
-  </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="contrib\masmx64\gvmat64.asm">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -795,8 +785,194 @@
     <ClCompile Include="libmysql\dns_srv.cc" />
     <ClCompile Include="libmysql\errmsg.cc" />
     <ClCompile Include="libmysql\libmysql.cc" />
-    <ClCompile Include="libmysql\mysql_trace.cc" />
-    <ClCompile Include="libmysql\test_trace_plugin.cc" />
+    <ClCompile Include="mysys\array.cc" />
+    <ClCompile Include="mysys\charset-def.cc" />
+    <ClCompile Include="mysys\charset.cc" />
+    <ClCompile Include="mysys\crypt_genhash_impl.cc" />
+    <ClCompile Include="mysys\dbug.cc" />
+    <ClCompile Include="mysys\errors.cc" />
+    <ClCompile Include="mysys\keyring_operations_helper.cc" />
+    <ClCompile Include="mysys\lf_alloc-pin.cc" />
+    <ClCompile Include="mysys\lf_dynarray.cc" />
+    <ClCompile Include="mysys\lf_hash.cc" />
+    <ClCompile Include="mysys\list.cc" />
+    <ClCompile Include="mysys\mf_arr_appstr.cc" />
+    <ClCompile Include="mysys\mf_cache.cc" />
+    <ClCompile Include="mysys\mf_dirname.cc" />
+    <ClCompile Include="mysys\mf_fn_ext.cc" />
+    <ClCompile Include="mysys\mf_format.cc" />
+    <ClCompile Include="mysys\mf_iocache.cc" />
+    <ClCompile Include="mysys\mf_iocache2.cc" />
+    <ClCompile Include="mysys\mf_keycache.cc" />
+    <ClCompile Include="mysys\mf_keycaches.cc" />
+    <ClCompile Include="mysys\mf_loadpath.cc" />
+    <ClCompile Include="mysys\mf_pack.cc" />
+    <ClCompile Include="mysys\mf_path.cc" />
+    <ClCompile Include="mysys\mf_same.cc" />
+    <ClCompile Include="mysys\mf_tempdir.cc" />
+    <ClCompile Include="mysys\mf_tempfile.cc" />
+    <ClCompile Include="mysys\mf_unixpath.cc" />
+    <ClCompile Include="mysys\mf_wcomp.cc" />
+    <ClCompile Include="mysys\mulalloc.cc" />
+    <ClCompile Include="mysys\my_access.cc" />
+    <ClCompile Include="mysys\my_aes.cc" />
+    <ClCompile Include="mysys\my_aes_openssl.cc" />
+    <ClCompile Include="mysys\my_alloc.cc" />
+    <ClCompile Include="mysys\my_bit.cc" />
+    <ClCompile Include="mysys\my_bitmap.cc" />
+    <ClCompile Include="mysys\my_chmod.cc" />
+    <ClCompile Include="mysys\my_chsize.cc" />
+    <ClCompile Include="mysys\my_compare.cc" />
+    <ClCompile Include="mysys\my_compress.cc" />
+    <ClCompile Include="mysys\my_conio.cc" />
+    <ClCompile Include="mysys\my_copy.cc" />
+    <ClCompile Include="mysys\my_create.cc" />
+    <ClCompile Include="mysys\my_default.cc" />
+    <ClCompile Include="mysys\my_delete.cc" />
+    <ClCompile Include="mysys\my_error.cc" />
+    <ClCompile Include="mysys\my_fallocator.cc" />
+    <ClCompile Include="mysys\my_file.cc" />
+    <ClCompile Include="mysys\my_fopen.cc" />
+    <ClCompile Include="mysys\my_fstream.cc" />
+    <ClCompile Include="mysys\my_gethwaddr.cc" />
+    <ClCompile Include="mysys\my_getopt.cc" />
+    <ClCompile Include="mysys\my_getwd.cc" />
+    <ClCompile Include="mysys\my_init.cc" />
+    <ClCompile Include="mysys\my_kdf.cc" />
+    <ClCompile Include="mysys\my_lib.cc" />
+    <ClCompile Include="mysys\my_malloc.cc" />
+    <ClCompile Include="mysys\my_md5.cc" />
+    <ClCompile Include="mysys\my_mess.cc" />
+    <ClCompile Include="mysys\my_mkdir.cc" />
+    <ClCompile Include="mysys\my_mmap.cc" />
+    <ClCompile Include="mysys\my_murmur3.cc" />
+    <ClCompile Include="mysys\my_nojemalloc.cc" />
+    <ClCompile Include="mysys\my_once.cc" />
+    <ClCompile Include="mysys\my_open.cc" />
+    <ClCompile Include="mysys\my_openssl_fips.cc" />
+    <ClCompile Include="mysys\my_pread.cc" />
+    <ClCompile Include="mysys\my_rdtsc.cc" />
+    <ClCompile Include="mysys\my_read.cc" />
+    <ClCompile Include="mysys\my_rename.cc" />
+    <ClCompile Include="mysys\my_rnd.cc" />
+    <ClCompile Include="mysys\my_seek.cc" />
+    <ClCompile Include="mysys\my_sha1.cc" />
+    <ClCompile Include="mysys\my_sha2.cc" />
+    <ClCompile Include="mysys\my_static.cc" />
+    <ClCompile Include="mysys\my_string.cc" />
+    <ClCompile Include="mysys\my_symlink.cc" />
+    <ClCompile Include="mysys\my_symlink2.cc" />
+    <ClCompile Include="mysys\my_sync.cc" />
+    <ClCompile Include="mysys\my_syslog.cc" />
+    <ClCompile Include="mysys\my_systime.cc" />
+    <ClCompile Include="mysys\my_thread.cc" />
+    <ClCompile Include="mysys\my_thr_init.cc" />
+    <ClCompile Include="mysys\my_time.cc" />
+    <ClCompile Include="mysys\my_user.cc" />
+    <ClCompile Include="mysys\my_windac.cc" />
+    <ClCompile Include="mysys\my_winerr.cc" />
+    <ClCompile Include="mysys\my_winfile.cc" />
+    <ClCompile Include="mysys\my_write.cc" />
+    <ClCompile Include="mysys\pack.cc" />
+    <ClCompile Include="mysys\print_version.cc" />
+    <ClCompile Include="mysys\psi_noop.cc" />
+    <ClCompile Include="mysys\ptr_cmp.cc" />
+    <ClCompile Include="mysys\sql_chars.cc" />
+    <ClCompile Include="mysys\stacktrace.cc" />
+    <ClCompile Include="mysys\thr_cond.cc" />
+    <ClCompile Include="mysys\thr_lock.cc" />
+    <ClCompile Include="mysys\thr_mutex.cc" />
+    <ClCompile Include="mysys\thr_rwlock.cc" />
+    <ClCompile Include="mysys\tree.cc" />
+    <ClCompile Include="mysys\typelib.cc" />
+    <ClCompile Include="mysys\unhex.cc" />
+    <ClCompile Include="mysys\win_timers.cc" />
+    <ClCompile Include="sql-common\bind_params.cc" />
+    <ClCompile Include="sql-common\client.cc" />
+    <ClCompile Include="sql-common\client_authentication.cc" />
+    <ClCompile Include="sql-common\client_plugin.cc" />
+    <ClCompile Include="sql-common\compression.cc" />
+    <ClCompile Include="sql-common\get_password.cc" />
+    <ClCompile Include="sql-common\json_binary.cc" />
+    <ClCompile Include="sql-common\json_dom.cc" />
+    <ClCompile Include="sql-common\json_path.cc" />
+    <ClCompile Include="sql-common\json_syntax_check.cc" />
+    <ClCompile Include="sql-common\my_path_permissions.cc" />
+    <ClCompile Include="sql-common\net_ns.cc" />
+    <ClCompile Include="sql-common\net_serv.cc" />
+    <ClCompile Include="sql-common\sql_string.cc" />
+    <ClCompile Include="sql\auth\password.cc" />
+    <ClCompile Include="sql\auth\sha2_password_common.cc" />
+    <ClCompile Include="strings\ctype-big5.cc" />
+    <ClCompile Include="strings\ctype-bin.cc" />
+    <ClCompile Include="strings\ctype-cp932.cc" />
+    <ClCompile Include="strings\ctype-czech.cc" />
+    <ClCompile Include="strings\ctype-eucjpms.cc" />
+    <ClCompile Include="strings\ctype-euc_kr.cc" />
+    <ClCompile Include="strings\ctype-extra.cc" />
+    <ClCompile Include="strings\ctype-gb18030.cc" />
+    <ClCompile Include="strings\ctype-gb2312.cc" />
+    <ClCompile Include="strings\ctype-gbk.cc" />
+    <ClCompile Include="strings\ctype-latin1.cc" />
+    <ClCompile Include="strings\ctype-mb.cc" />
+    <ClCompile Include="strings\ctype-simple.cc" />
+    <ClCompile Include="strings\ctype-sjis.cc" />
+    <ClCompile Include="strings\ctype-tis620.cc" />
+    <ClCompile Include="strings\ctype-uca.cc" />
+    <ClCompile Include="strings\ctype-ucs2.cc" />
+    <ClCompile Include="strings\ctype-ujis.cc" />
+    <ClCompile Include="strings\ctype-utf8.cc" />
+    <ClCompile Include="strings\ctype-win1250ch.cc" />
+    <ClCompile Include="strings\ctype.cc" />
+    <ClCompile Include="strings\decimal.cc" />
+    <ClCompile Include="strings\dtoa.cc" />
+    <ClCompile Include="strings\dump_map.cc" />
+    <ClCompile Include="strings\hans_ja.cpp" />
+    <ClCompile Include="strings\hans_zh.cpp" />
+    <ClCompile Include="strings\int2str.cc" />
+    <ClCompile Include="strings\my_strchr.cc" />
+    <ClCompile Include="strings\my_strtoll10.cc" />
+    <ClCompile Include="strings\str2int.cc" />
+    <ClCompile Include="strings\strcont.cc" />
+    <ClCompile Include="strings\strmake.cc" />
+    <ClCompile Include="strings\strxmov.cc" />
+    <ClCompile Include="strings\strxnmov.cc" />
+    <ClCompile Include="strings\str_alloc.cc" />
+    <ClCompile Include="strings\xml.cc" />
+    <ClCompile Include="vio\vio.cc" />
+    <ClCompile Include="vio\viopipe.cc" />
+    <ClCompile Include="vio\vioshm.cc" />
+    <ClCompile Include="vio\viosocket.cc" />
+    <ClCompile Include="vio\viossl.cc" />
+    <ClCompile Include="vio\viosslfactories.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libmysql.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\zlib\zlib.vcxproj">
+      <Project>{34fcfbf1-e922-4fdc-bc83-b3c04623e8c2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\zstd\zstd.vcxproj">
+      <Project>{8d02d39a-9154-4121-a46e-924257927c2e}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sql-common\client_async_authentication.h" />
+    <ClInclude Include="sql-common\client_extensions_macros.h" />
+    <ClInclude Include="sql-common\json_binary.h" />
+    <ClInclude Include="sql-common\json_dom.h" />
+    <ClInclude Include="sql-common\json_error_handler.h" />
+    <ClInclude Include="sql-common\json_path.h" />
+    <ClInclude Include="sql-common\json_syntax_check.h" />
+    <ClInclude Include="sql-common\net_ns.h" />
+    <ClInclude Include="strings\mb_wc.h" />
+    <ClInclude Include="strings\str_uca_type.h" />
+    <ClInclude Include="strings\t_ctype.h" />
+    <ClInclude Include="strings\uca900_data.h" />
+    <ClInclude Include="strings\uca900_ja_data.h" />
+    <ClInclude Include="strings\uca900_zh_data.h" />
+    <ClInclude Include="strings\uca_data.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
