@@ -17,6 +17,22 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="StaticDebug|Win32">
+      <Configuration>StaticDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StaticDebug|x64">
+      <Configuration>StaticDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StaticRelease|Win32">
+      <Configuration>StaticRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StaticRelease|x64">
+      <Configuration>StaticRelease</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="strings\uca9-dump.cc" />
@@ -35,7 +51,20 @@
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
@@ -48,7 +77,20 @@
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
@@ -65,7 +107,17 @@
     <Import Project="..\..\..\..\operating-system\operating-system-windows\Common.props" />
     <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\operating-system\operating-system-windows\Common.props" />
+    <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\operating-system\operating-system-windows\Common.props" />
+    <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\..\..\operating-system\operating-system-windows\Common.props" />
     <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
@@ -74,7 +126,16 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\operating-system\operating-system-windows\Common.props" />
+    <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\..\..\operating-system\operating-system-windows\Common.props" />
     <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
@@ -95,6 +156,34 @@
     </Link>
     <PreBuildEvent>
       <Command />
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Command>$(OutDir)uca9dump ja --in_file=$(ProjectDir)strings/lang_data/ja_hans.txt --out_file=$(ProjectDir)strings/hans_ja.cpp
+$(OutDir)uca9dump zh --in_file=$(ProjectDir)strings/lang_data/zh_hans.txt --out_file=$(ProjectDir)strings/hans_zh.cpp</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>$(ProjectDir)strings/hans_ja.cpp;$(ProjectDir)strings/hans_zh.cpp</Outputs>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Inputs>$(ProjectDir)strings/lang_data/ja_hans.txt;$(ProjectDir)strings/lang_data/zh_hans.txt</Inputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
     </PreBuildEvent>
     <CustomBuildStep>
       <Command>$(OutDir)uca9dump ja --in_file=$(ProjectDir)strings/lang_data/ja_hans.txt --out_file=$(ProjectDir)strings/hans_ja.cpp
@@ -138,6 +227,38 @@ $(OutDir)uca9dump zh --in_file=$(ProjectDir)strings/lang_data/zh_hans.txt --out_
       <Inputs>$(ProjectDir)strings/lang_data/ja_hans.txt;$(ProjectDir)strings/lang_data/zh_hans.txt</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Command>$(OutDir)uca9dump ja --in_file=$(ProjectDir)strings/lang_data/ja_hans.txt --out_file=$(ProjectDir)strings/hans_ja.cpp
+$(OutDir)uca9dump zh --in_file=$(ProjectDir)strings/lang_data/zh_hans.txt --out_file=$(ProjectDir)strings/hans_zh.cpp</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>$(ProjectDir)strings/hans_ja.cpp;$(ProjectDir)strings/hans_zh.cpp</Outputs>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Inputs>$(ProjectDir)strings/lang_data/ja_hans.txt;$(ProjectDir)strings/lang_data/zh_hans.txt</Inputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -153,6 +274,34 @@ $(OutDir)uca9dump zh --in_file=$(ProjectDir)strings/lang_data/zh_hans.txt --out_
     </Link>
     <PreBuildEvent>
       <Command />
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Command>$(OutDir)uca9dump ja --in_file=$(ProjectDir)strings/lang_data/ja_hans.txt --out_file=$(ProjectDir)strings/hans_ja.cpp
+$(OutDir)uca9dump zh --in_file=$(ProjectDir)strings/lang_data/zh_hans.txt --out_file=$(ProjectDir)strings/hans_zh.cpp</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>$(ProjectDir)strings/hans_ja.cpp;$(ProjectDir)strings/hans_zh.cpp</Outputs>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Inputs>$(ProjectDir)strings/lang_data/ja_hans.txt;$(ProjectDir)strings/lang_data/zh_hans.txt</Inputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
     </PreBuildEvent>
     <CustomBuildStep>
       <Command>$(OutDir)uca9dump ja --in_file=$(ProjectDir)strings/lang_data/ja_hans.txt --out_file=$(ProjectDir)strings/hans_ja.cpp
@@ -184,6 +333,38 @@ $(OutDir)uca9dump zh --in_file=$(ProjectDir)strings/lang_data/zh_hans.txt --out_
     </Link>
     <PreBuildEvent>
       <Command />
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Command>$(OutDir)uca9dump ja --in_file=$(ProjectDir)strings/lang_data/ja_hans.txt --out_file=$(ProjectDir)strings/hans_ja.cpp
+$(OutDir)uca9dump zh --in_file=$(ProjectDir)strings/lang_data/zh_hans.txt --out_file=$(ProjectDir)strings/hans_zh.cpp</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>$(ProjectDir)strings/hans_ja.cpp;$(ProjectDir)strings/hans_zh.cpp</Outputs>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Inputs>$(ProjectDir)strings/lang_data/ja_hans.txt;$(ProjectDir)strings/lang_data/zh_hans.txt</Inputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
     </PreBuildEvent>
     <CustomBuildStep>
       <Command>$(OutDir)uca9dump ja --in_file=$(ProjectDir)strings/lang_data/ja_hans.txt --out_file=$(ProjectDir)strings/hans_ja.cpp
