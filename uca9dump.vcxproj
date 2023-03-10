@@ -104,41 +104,41 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\..\operating-system\operating-system-windows\Common.props" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
+    <Import Project="..\..\..\..\operating_system\operating_system-windows\Common.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\Common.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\..\operating-system\operating-system-windows\Common.props" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
+    <Import Project="..\..\..\..\operating_system\operating_system-windows\Common.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\Common.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\..\operating-system\operating-system-windows\Common.props" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
+    <Import Project="..\..\..\..\operating_system\operating_system-windows\Common.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\Common.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\..\operating-system\operating-system-windows\Common.props" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
+    <Import Project="..\..\..\..\operating_system\operating_system-windows\Common.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\Common.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\Common.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\Common.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\..\operating-system\operating-system-windows\Common.props" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
+    <Import Project="..\..\..\..\operating_system\operating_system-windows\Common.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\Common.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\..\operating-system\operating-system-windows\Common.props" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\Common.props" />
+    <Import Project="..\..\..\..\operating_system\operating_system-windows\Common.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\Common.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -147,7 +147,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating_system/operating_system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating_system/windows/mysql;$(SolutionDir)../../../source/port/include/operating_system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -174,7 +174,7 @@ $(OutDir)uca9dump zh --in_file=$(ProjectDir)strings/lang_data/zh_hans.txt --out_
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating_system/operating_system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating_system/windows/mysql;$(SolutionDir)../../../source/port/include/operating_system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -204,7 +204,7 @@ $(OutDir)uca9dump zh --in_file=$(ProjectDir)strings/lang_data/zh_hans.txt --out_
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating_system/operating_system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating_system/windows/mysql;$(SolutionDir)../../../source/port/include/operating_system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -235,7 +235,7 @@ $(OutDir)uca9dump zh --in_file=$(ProjectDir)strings/lang_data/zh_hans.txt --out_
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating_system/operating_system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating_system/windows/mysql;$(SolutionDir)../../../source/port/include/operating_system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -265,7 +265,7 @@ $(OutDir)uca9dump zh --in_file=$(ProjectDir)strings/lang_data/zh_hans.txt --out_
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating_system/operating_system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating_system/windows/mysql;$(SolutionDir)../../../source/port/include/operating_system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -292,7 +292,7 @@ $(OutDir)uca9dump zh --in_file=$(ProjectDir)strings/lang_data/zh_hans.txt --out_
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating_system/operating_system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating_system/windows/mysql;$(SolutionDir)../../../source/port/include/operating_system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -322,7 +322,7 @@ $(OutDir)uca9dump zh --in_file=$(ProjectDir)strings/lang_data/zh_hans.txt --out_
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating_system/operating_system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating_system/windows/mysql;$(SolutionDir)../../../source/port/include/operating_system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -353,7 +353,7 @@ $(OutDir)uca9dump zh --in_file=$(ProjectDir)strings/lang_data/zh_hans.txt --out_
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating-system/operating-system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating-system/windows/mysql;$(SolutionDir)../../../source/port/include/operating-system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../operating_system/operating_system-windows/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../../source/port/include/operating_system/windows/mysql;$(SolutionDir)../../../source/port/include/operating_system/windows;.;$(ProjectDir);extra/zstd/zstd-1.5.0/lib</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
