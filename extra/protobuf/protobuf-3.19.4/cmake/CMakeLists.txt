@@ -29,7 +29,7 @@ if (CYGWIN)
 else()
 #  set(CMAKE_CXX_STANDARD 11)
 #  set(CMAKE_CXX_STANDARD_REQUIRED ON)
-  set(CMAKE_CXX_EXTENSIONS OFF)
+
 endif()
 
 # The Intel compiler isn't able to deal with noinline member functions of
