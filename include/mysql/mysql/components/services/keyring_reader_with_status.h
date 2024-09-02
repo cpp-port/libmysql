@@ -96,8 +96,8 @@ DEFINE_SERVICE_HANDLE(my_h_keyring_reader_object);
                               &fetched_key_type_length) == true)
       return true;
 
-    *out_key_buffer = new char[](fetched_key_length);
-    *out_key_type = new char[](fetched_key_type_length + 1);
+    *out_key_buffer = new char[fetched_key_length];
+    *out_key_type = new char[fetched_key_type_length + 1];
     if (*out_key_buffer == nullptr || *out_key_type == nullptr) {
       return true;
     }
