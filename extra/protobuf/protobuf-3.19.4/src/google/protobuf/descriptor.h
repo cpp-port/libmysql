@@ -2365,7 +2365,7 @@ inline int MethodDescriptor::index() const {
   return static_cast<int>(this - service_->methods_);
 }
 
-inline const char* FieldDescriptor::type_name() const {
+inline const char* FieldDescriptor::type() const {
   return kTypeToName[type()];
 }
 

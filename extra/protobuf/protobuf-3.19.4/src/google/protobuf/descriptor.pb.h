@@ -10178,7 +10178,7 @@ inline void FieldDescriptorProto::clear_type_name() {
   type_name_.ClearToEmpty();
   _has_bits_[0] &= ~0x00000004u;
 }
-inline const std::string& FieldDescriptorProto::type_name() const {
+inline const std::string& FieldDescriptorProto::type() const {
   // @@protoc_insertion_point(field_get:google.protobuf.FieldDescriptorProto.type_name)
   return _internal_type_name();
 }

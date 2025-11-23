@@ -91,11 +91,11 @@ class not_implemented_exception : public std::exception {
  private:
   Srs_type m_srs_type;
 
-  std::string m_typenames;
+  std::string m_types;
 
   not_implemented_exception(Srs_type srs_type, const Geometry &g) {
     m_srs_type = srs_type;
-    m_typenames = std::string(type_to_name(g.type()));
+    m_types = std::string(type_to_name(g.type()));
   }
 
   not_implemented_exception(Srs_type srs_type, const Geometry &g1,
@@ -104,12 +104,12 @@ class not_implemented_exception : public std::exception {
     m_srs_type = srs_type;
     std::stringstream ss;
     ss << type_to_name(g1.type()) << ", " << type_to_name(g2.type());
-    m_typenames = ss.str();
+    m_types = ss.str();
   }
 
  public:
   Srs_type srs_type() const { return m_srs_type; }
-  const char *typenames() const { return m_typenames.c_str(); }
+  const char *typenames() const { return m_types.c_str(); }
 
   static not_implemented_exception for_projected(const Geometry &g) {
     return not_implemented_exception(kProjected, g);

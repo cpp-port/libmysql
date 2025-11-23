@@ -203,11 +203,11 @@ std::string FieldGeneratorBase::name() {
   return UnderscoresToCamelCase(GetFieldName(descriptor_), false);
 }
 
-std::string FieldGeneratorBase::type_name() {
+std::string FieldGeneratorBase::type() {
   return type_name(descriptor_);
 }
 
-std::string FieldGeneratorBase::type_name(const FieldDescriptor* descriptor) {
+std::string FieldGeneratorBase::type(const FieldDescriptor* descriptor) {
   switch (descriptor->type()) {
     case FieldDescriptor::TYPE_ENUM:
       return GetClassName(descriptor->enum_type());
