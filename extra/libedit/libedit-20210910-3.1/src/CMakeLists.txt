@@ -147,20 +147,20 @@ ADD_DEPENDENCIES(edit libedit_vi libedit_emacs libedit_common libedit_fcns libed
 # converts between pointers to integer types with different sign
 MY_CHECK_C_COMPILER_FLAG("-Wpointer-sign" HAVE_POINTER_SIGN)
 IF(HAVE_POINTER_SIGN)
-  TARGET_COMPILE_OPTIONS(edit PRIVATE "-Wno-pointer-sign")
+  target_compile_options(${PROJECT_NAME} PRIVATE "-Wno-pointer-sign")
 ENDIF()
 
 MY_CHECK_C_COMPILER_FLAG("-Wstringop-overflow" HAVE_STRINGOP_OVERFLOW)
 IF(HAVE_STRINGOP_OVERFLOW)
-  TARGET_COMPILE_OPTIONS(edit PRIVATE "-Wno-stringop-overflow")
+  target_compile_options(${PROJECT_NAME} PRIVATE "-Wno-stringop-overflow")
 ENDIF()
 
 MY_CHECK_C_COMPILER_FLAG("-Wunused-result" HAVE_UNUSED_RESULT)
 IF(HAVE_UNUSED_RESULT)
-  TARGET_COMPILE_OPTIONS(edit PRIVATE "-Wno-unused-result")
+  target_compile_options(${PROJECT_NAME} PRIVATE "-Wno-unused-result")
 ENDIF()
 
 MY_CHECK_C_COMPILER_FLAG("-Wstringop-truncation" HAVE_STRINGOP_TRUNCATION)
 IF(HAVE_STRINGOP_TRUNCATION)
-  TARGET_COMPILE_OPTIONS(edit PRIVATE "-Wno-stringop-truncation")
+  target_compile_options(${PROJECT_NAME} PRIVATE "-Wno-stringop-truncation")
 ENDIF()
